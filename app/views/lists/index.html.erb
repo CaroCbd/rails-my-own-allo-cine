@@ -1,0 +1,19 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.istockphoto.com/id/1127348662/fr/photo/plein-cadre-de-ma%C3%AFs-souffl%C3%A9-d%C3%A9taill%C3%A9e-vue-den-haut-vue-de-dessus.jpg?b=1&s=612x612&w=0&k=20&c=UwATqxgNC8PWKEL2CTDKUAZswMc7FlZx05SeP3ucfN4=);">
+  <div class="container">
+    <h1> Sort your favorite movies </strong>!</h1>
+    <p>And access to <strong>incredible</strong> movie nights </p>
+  </div>
+</div>
+
+<div class="grid">
+  <% @lists.each do |list| %>
+    <div class="card">
+      <div class="card-header">
+        <%= list.name%>
+      </div>
+      <div class="card-footer">
+        <%= link_to "See movies", list_path(list)%>
+      </div>
+    </div>
+  <% end %>
+</div>

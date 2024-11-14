@@ -1,0 +1,15 @@
+<h1>
+  <%= @list.name %>
+</h1>
+
+<div class="grid">
+  <% @list.bookmarks.each do |bookmark| %>
+    <div class="card-body">
+      <%= bookmark.comment%>
+      <%= bookmark.movie.title%>
+      <%= link_to "Delete this bookmark", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure to delete this bookmark ?"} %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "Create bookmark", new_list_bookmark_path(@list) %>
