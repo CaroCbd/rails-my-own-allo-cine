@@ -1,3 +1,25 @@
+<div class="mt-3">
+  <div class="bg-dark text-light">
+    <h3 class="mb-3 p-4"> Add a new movie to <%= @list.name %> </h3>
+      <%= simple_form_for [@list, @bookmark] do |f| %>
+        <div class="ms-3 row g-3 d-flex justify-content-center align-items-center">
+          <div class="col">
+            <%= f.input :comment, input_HTLM: {class:"form-control"}, label_HTLM: {class:"form-label"} %>
+          </div>
+          <div class="col">
+            <%= f.association :movie %>
+          </div>
+          <div class="col">
+            <div class="d-flex justify-content-center align-items-center">
+              <%= f.submit "Add bookmark", class:"btn btn-light mt-3" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 <h1> Add a new movie to <%= @list.name %> </h1>
 
 <%= simple_form_for [@list, @bookmark] do |f| %>

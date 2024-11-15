@@ -8,7 +8,7 @@
   <div class="cards my-3">
     <% @lists.each do |list| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
-        <h3 style="word-wrap: break-word">
+        <h3 style="">
           <%= list.name%>
         </h3>
         <div class="card-footer">
@@ -19,25 +19,24 @@
     <% end %>
   </div>
   <div class="mt-3">
-  <div class="bg-dark text-light">
-    <h3 class="mb-3 p-4"> Create a new list </h3>
-      <%= simple_form_for @list do |f| %>
-        <div class="ms-3 row g-3 d-flex justify-content-center align-items-center">
-          <div class="col">
-            <%= f.input :name, input_HTLM: {class:"form-control"}, label_HTLM: {class:"form-label"} %>
-          </div>
-          <div class="col">
-            <%= f.input :photo, as: :file %>
-          </div>
-          <div class="col">
-            <div class="d-flex justify-content-center align-items-center">
-              <%= f.submit "Create a new list", class:"btn btn-light mt-3" %>
+    <div class="bg-dark text-light">
+      <h3 class="mb-3 p-4"> Create a new list </h3>
+        <%= simple_form_for @list do |f| %>
+          <div class="ms-3 row g-3 d-flex justify-content-center align-items-center">
+            <div class="col">
+              <%= f.input :name, input_HTLM: {class:"form-control"}, label_HTLM: {class:"form-label"} %>
+            </div>
+            <div class="col">
+              <%= f.input :photo, as: :file %>
+            </div>
+            <div class="col">
+              <div class="d-flex justify-content-center align-items-center">
+                <%= f.submit "Create a new list", class:"btn btn-light mt-3" %>
+              </div>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
-
 </div>
