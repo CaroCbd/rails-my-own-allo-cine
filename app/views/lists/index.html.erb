@@ -4,16 +4,27 @@
     <p>And access to <strong>incredible</strong> movie nights </p>
   </div>
 </div>
-
-<div class="grid">
-  <% @lists.each do |list| %>
-    <div class="card">
-      <div class="card-header">
-        <%= list.name%>
+<div class="container">
+  <div class="cards my-3">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1523207911345-32501502db22?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bW92aWV8ZW58MHx8MHx8fDI%3D)">
+        <h2>
+          <strong>Create a new list</strong>
+        </h2>
+        <div class="card-footer">
+          <i class="fa-solid fa-heart-circle-plus"></i>
+          <%= link_to "Create my new list", new_list_path%>
+        </div>
       </div>
-      <div class="card-footer">
-        <%= link_to "See movies", list_path(list)%>
+    <% @lists.each do |list| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1545129139-1beb780cf337?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
+        <h2>
+          <%= list.name%>
+        </h2>
+        <div class="card-footer">
+          <i class="fa-solid fa-film"></i>
+          <%= link_to "See movies", list_path(list)%>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
