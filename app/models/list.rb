@@ -1,9 +1,10 @@
 class List < ApplicationRecord
     # Attention, l'ordre importe : je peux pas faire through "bookmark" si j'ai pas
     # dit qu'elle avait des bookmarks
-    
     has_many :bookmarks
     has_many :movies, through: :bookmarks, dependent: :destroy
+
+    has_one_attached :photo
 
     validates :name, presence: {
       message: "You must name your list"

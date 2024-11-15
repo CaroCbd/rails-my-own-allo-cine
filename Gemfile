@@ -29,6 +29,10 @@ gem "jbuilder"
 # Dotenv : to manage environement variables such as API keys
 gem "dotenv-rails"
 
+# Cloudinary : to manage images hosting
+gem "cloudinary"
+
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

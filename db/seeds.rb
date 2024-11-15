@@ -43,17 +43,16 @@ end
 
 puts "#{Movie.count} movies created..."
 
-List.create!(name:"Comedies");
-List.create!(name:"Horror Movies");
-List.create!(name:"Documentaries");
-List.create!(name:"Thrillers");
-List.create!(name:"Guilty Pleasures");
+# List.create!(name:"Comedies");
+# List.create!(name:"Horror Movies");
+# List.create!(name:"Documentaries");
+# List.create!(name:"Thrillers");
+# List.create!(name:"Guilty Pleasures");
 
 puts "#{List.count} list created..."
 
 # Assign movies to list Comedies through bookmark
-Bookmark.create!(movie: Movie.first, list:List.first, comment:"Good movie")
-Bookmark.create!(movie: Movie.last, list:List.first, comment:"Great movie")
-
+# Bookmark.create!(movie: Movie.first, list:List.first, comment:"Good movie")
+# Bookmark.create!(movie: Movie.last, list:List.first, comment:"Great movie")
 
 puts  "#{Bookmark.count} Bookmark created..."
